@@ -266,6 +266,9 @@ function checkElementNumber(e) {
         ) {
             modifyErrorMessage(e, "套票星級必須介於 1 和 10 之間!");
             return false;
+        } else if (e.target.id === "ticketNum" && e.target.value < 1) {
+            modifyErrorMessage(e, "套票組數必須大於或等於 1 組!");
+            return false;
         }
     }
 
@@ -323,6 +326,10 @@ function isInputValueLegal(e) {
     // 客製化判斷
     // 套票星級必須介於1~10之間
     if (e.id === "ticketRate" && (e.value < 1 || e.value > 10)) {
+        return false;
+    }
+    // 套票組數必須大於或等於 1 組
+    else if (e.id === "ticketNum" && e.value < 1) {
         return false;
     }
 
