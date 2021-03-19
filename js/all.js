@@ -184,9 +184,9 @@ function addTicketData() {
     const imgUrl = textTicketImgUrl.value;
     const area =
         selectTicketRegion.options[selectTicketRegion.selectedIndex].value;
-    const price = numberTicketPrice.value;
-    const group = numberTicketNum.value;
-    const rate = numberTicketRate.value;
+    const price = Number(numberTicketPrice.value);
+    const group = Number(numberTicketNum.value);
+    const rate = Number(numberTicketRate.value);
     const description = textTicketDescription.value;
 
     // 產生物件並加入data物件陣列
